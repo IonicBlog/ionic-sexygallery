@@ -1,0 +1,18 @@
+<ion-view title="{{title}}">
+
+  <ion-content lazy-scroll>
+    <div class="row row-wrap">
+      <div class="col col-50" ng-repeat="gallery in galleries">
+        <a ng-href="#/app/gallery/{{gallery.id}}/{{gallery.title}}">
+          <img class="full-image blur" height="200px" image-lazy-src="http://tnfs.tngou.net/image{{gallery.img}}{{size}}">
+          <!--image-lazy-background-image="true" 
+              image-lazy-loader="ios"
+              lazy-scroll-resize="true" 
+              image-lazy-distance-from-bottom-to-load="100" 
+              image-lazy-distance-from-right-to-load="100"-->
+        </a>
+        <p class="item-note">{{gallery.title}}</p>
+      </div>
+    </div> 
+  </ion-content>
+</ion-view>

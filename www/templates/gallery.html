@@ -1,0 +1,20 @@
+<ion-view view-title="{{title}}">
+  <ion-content class="has-header" lazy-scroll>
+    <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
+      <ion-slide item-width="100%" item-height="100%" ng-repeat="image in images">
+        <img class="padding-vertical blur" style="width:{{width}}px;" ng-click="openLinkInBrowser('http://tnfs.tngou.net/image{{image.src}}{{size}}')"
+          lazy-scroll-resize="true" image-lazy-src="http://tnfs.tngou.net/image{{image.src}}{{size}}" image-lazy-loader="lines">
+        <!--image-lazy-background-image="true"  repeat
+                                image-lazy-distance-from-right-to-load="-1"  左右滑动懒加载在android上不可用
+                                 -->
+
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+  <div class="bar bar-footer bar-calm">
+    <li class="button button-clear icon-left ion-arrow-left-b" ng-click="previous()"></li>
+    <div class="title">{{slideIndex+1}}/{{total}}{{downloadProgress}}</div>
+    <li class="button button-clear icon-right ion-arrow-right-b" ng-click="next()"></li>
+  </div>
+
+</ion-view>
